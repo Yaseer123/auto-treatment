@@ -7,9 +7,7 @@ const ContactSection = () => {
         <Container fluid className="py-5">
             <Container>
                 <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 className="text-primary text-uppercase">
-                        // Contact Us //
-                    </h6>
+                    <h6 className="text-primary text-uppercase">Contact Us</h6>
                     <h1 className="mb-5">Contact For Any Query</h1>
                 </div>
                 <Row className="g-4">
