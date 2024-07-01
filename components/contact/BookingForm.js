@@ -58,13 +58,11 @@ const BookingForm = () => {
                                 Provider
                             </h1>
                             <p className="text-white mb-0">
-                                Eirmod sed tempor lorem ut dolores. Aliquyam sit
-                                sadipscing kasd ipsum. Dolor ea et dolore et at
-                                sea ea at dolor, justo ipsum duo rebum sea
-                                invidunt voluptua. Eos vero eos vero ea et
-                                dolore eirmod et. Dolores diam duo invidunt
-                                lorem. Elitr ut dolores magna sit. Sea dolore
-                                sanctus sed et. Takimata takimata sanctus sed.
+                                We specialize in providing certified and
+                                award-winning car repair services. Our team has
+                                over 30 years of experience in delivering
+                                top-notch car repair solutions, ensuring your
+                                vehicle receives the best care possible.
                             </p>
                         </div>
                     </Col>
@@ -101,7 +99,7 @@ const BookingForm = () => {
                                         <Form.Control
                                             as="textarea"
                                             name="message"
-                                            placeholder="Your Message"
+                                            placeholder="Tell us about your car issues and preferred appointment time."
                                             rows={3}
                                             value={formData.message}
                                             onChange={handleChange}

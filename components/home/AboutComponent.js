@@ -39,10 +39,15 @@ const AboutComponent = () => {
                             Is The Best Place For Your Auto Care
                         </h1>
                         <p className="mb-4">
-                            Tempor erat elitr rebum at clita. Diam dolor diam
-                            ipsum sit. Aliqu diam amet diam et eos. Clita erat
-                            ipsum et lorem et sit, sed stet lorem sit clita duo
-                            justo magna dolore erat amet
+                            At Auto Treatment, we pride ourselves on providing
+                            top-notch car repair, maintenance, and service. Our
+                            team of experienced professionals is dedicated to
+                            ensuring your vehicle is in the best possible
+                            condition. We offer a comprehensive range of
+                            services, from routine maintenance to complex
+                            repairs, using high-quality parts and the latest
+                            technology. Trust us to keep your car running
+                            smoothly and efficiently.
                         </p>
                         <Row className="g-4 mb-3 pb-3">
                             <Col
@@ -65,8 +70,9 @@ const AboutComponent = () => {
                                     <div className="ps-3">
                                         <h6>Professional & Expert</h6>
                                         <span>
-                                            Diam dolor diam ipsum sit amet diam
-                                            et eos
+                                            Our team consists of highly trained
+                                            and certified experts who are
+                                            passionate about cars.
                                         </span>
                                     </div>
                                 </div>
@@ -91,8 +97,9 @@ const AboutComponent = () => {
                                     <div className="ps-3">
                                         <h6>Quality Servicing Center</h6>
                                         <span>
-                                            Diam dolor diam ipsum sit amet diam
-                                            et eos
+                                            We use the latest tools and
+                                            technology to provide the best
+                                            service for your vehicle.
                                         </span>
                                     </div>
                                 </div>
@@ -115,16 +122,20 @@ const AboutComponent = () => {
                                         </span>
                                     </div>
                                     <div className="ps-3">
-                                        <h6>Awards Winning Workers</h6>
+                                        <h6>Award-Winning Workers</h6>
                                         <span>
-                                            Diam dolor diam ipsum sit amet diam
-                                            et eos
+                                            Our commitment to excellence has
+                                            been recognized with numerous awards
+                                            in the industry.
                                         </span>
                                     </div>
                                 </div>
                             </Col>
                         </Row>
-                        <Button href="" className="btn btn-primary py-3 px-5">
+                        <Button
+                            href="/services"
+                            className="btn btn-primary py-3 px-5"
+                        >
                             Read More <FaArrowRight className="ms-3" />
                         </Button>
                     </Col>

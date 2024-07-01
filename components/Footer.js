@@ -25,11 +25,12 @@ const Footer = () => {
                         <h4 className="text-light mb-4">Address</h4>
                         <p className="mb-2">
                             <FaMapMarkerAlt className="me-3" />
-                            Location, City, Country
+                            Plot-37, Road-20, Block-J, Baridhara, Vatara,
+                            Dhaka-1212
                         </p>
                         <p className="mb-2">
                             <FaPhoneAlt className="me-3" />
-                            +012 345 67890
+                            +8801715663335
                         </p>
                         <p className="mb-2">
                             <FaEnvelope className="me-3" />
@@ -73,35 +74,35 @@ const Footer = () => {
                         <h4 className="text-light mb-4">Services</h4>
                         <a
                             className="btn btn-link d-flex align-items-center"
-                            href=""
+                            href="/services"
                         >
                             <IoIosArrowForward className="me-2" />
                             Diagnostic Test
                         </a>
                         <a
                             className="btn btn-link d-flex align-items-center"
-                            href=""
+                            href="/services"
                         >
                             <IoIosArrowForward className="me-2" />
                             Engine Servicing
                         </a>
                         <a
                             className="btn btn-link d-flex align-items-center"
-                            href=""
+                            href="/services"
                         >
                             <IoIosArrowForward className="me-2" />
                             Tires Replacement
                         </a>
                         <a
                             className="btn btn-link d-flex align-items-center"
-                            href=""
+                            href="/services"
                         >
                             <IoIosArrowForward className="me-2" />
                             Oil Changing
                         </a>
                         <a
                             className="btn btn-link d-flex align-items-center"
-                            href=""
+                            href="/services"
                         >
                             <IoIosArrowForward className="me-2" />
                             Vacuum Cleaning
@@ -110,8 +111,8 @@ const Footer = () => {
                     <Col lg={3} md={6}>
                         <h4 className="text-light mb-4">Newsletter</h4>
                         <p>
-                            Dolor amet sit justo amet elitr clita ipsum elitr
-                            est.
+                            Unlock the Garage of Savings! Subscribe for insider
+                            deals and car care secrets.
                         </p>
                         <div
                             className="position-relative mx-auto"
@@ -142,16 +143,16 @@ const Footer = () => {
                             &copy;{" "}
                             <a
                                 className="border-bottom"
-                                href="https://freewebsitecode.com"
+                                href="https://autotreatment.auto"
                             >
-                                Your Site Name
+                                Auto Treatment
                             </a>
                             , All Right Reserved. Designed By{" "}
                             <a
                                 className="border-bottom"
-                                href="https://freewebsitecode.com"
+                                href="https://autotreatment.auto"
                             >
-                                Free Website Code
+                                MYM DEV
                             </a>
                         </Col>
                         <Col md={6} className="text-center text-md-end">

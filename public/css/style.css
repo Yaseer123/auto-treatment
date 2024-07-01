@@ -6,6 +6,21 @@
     --dark: #111111 !important;
 }
 
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+span,
+small {
+    font-weight: 5rem !important;
+}
+
 .text-primary {
     color: #D81324 !important;
 }

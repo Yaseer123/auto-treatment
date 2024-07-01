@@ -129,16 +129,13 @@ const Service = () => {
                                     </Col>
                                     <Col md={6}>
                                         <h3 className="mb-3">
-                                            15 Years Of Experience In Auto
-                                            Servicing
+                                            Diagnostic Test
                                         </h3>
                                         <p className="mb-4">
-                                            Tempor erat elitr rebum at clita.
-                                            Diam dolor diam ipsum sit. Aliqu
-                                            diam amet diam et eos. Clita erat
-                                            ipsum et lorem et sit, sed stet
-                                            lorem sit clita duo justo magna
-                                            dolore erat amet
+                                            We provide comprehensive diagnostic
+                                            tests with 30 years of experience,
+                                            ensuring accurate and reliable
+                                            vehicle assessments.
                                         </p>
                                         <p>
                                             <i className="fa fa-check text-success me-3"></i>
@@ -153,7 +150,7 @@ const Service = () => {
                                             Modern Equipment
                                         </p>
                                         <Button
-                                            href=""
+                                            href="/services"
                                             variant="primary"
                                             className="py-3 px-5 mt-3"
                                         >
@@ -184,16 +181,13 @@ const Service = () => {
                                     </Col>
                                     <Col md={6}>
                                         <h3 className="mb-3">
-                                            14 Years Of Experience In Auto
-                                            Servicing
+                                            Engine Servicing
                                         </h3>
                                         <p className="mb-4">
-                                            Tempor erat elitr rebum at clita.
-                                            Diam dolor diam ipsum sit. Aliqu
-                                            diam amet diam et eos. Clita erat
-                                            ipsum et lorem et sit, sed stet
-                                            lorem sit clita duo justo magna
-                                            dolore erat amet
+                                            Our engine servicing combines 30
+                                            years of experience with
+                                            state-of-the-art techniques to keep
+                                            your engine in optimal condition.
                                         </p>
                                         <p>
                                             <i className="fa fa-check text-success me-3"></i>
@@ -208,7 +202,7 @@ const Service = () => {
                                             Modern Equipment
                                         </p>
                                         <Button
-                                            href=""
+                                            href="/services"
                                             variant="primary"
                                             className="py-3 px-5 mt-3"
                                         >
@@ -239,16 +233,14 @@ const Service = () => {
                                     </Col>
                                     <Col md={6}>
                                         <h3 className="mb-3">
-                                            13 Years Of Experience In Auto
-                                            Servicing
+                                            Tires Replacement
                                         </h3>
                                         <p className="mb-4">
-                                            Tempor erat elitr rebum at clita.
-                                            Diam dolor diam ipsum sit. Aliqu
-                                            diam amet diam et eos. Clita erat
-                                            ipsum et lorem et sit, sed stet
-                                            lorem sit clita duo justo magna
-                                            dolore erat amet
+                                            With 30 years of experience, we
+                                            offer precise tire replacement
+                                            services to enhance your
+                                            vehicle&apos;s performance and
+                                            safety.
                                         </p>
                                         <p>
                                             <i className="fa fa-check text-success me-3"></i>
@@ -263,7 +255,7 @@ const Service = () => {
                                             Modern Equipment
                                         </p>
                                         <Button
-                                            href=""
+                                            href="/services"
                                             variant="primary"
                                             className="py-3 px-5 mt-3"
                                         >
@@ -293,17 +285,12 @@ const Service = () => {
                                         </div>
                                     </Col>
                                     <Col md={6}>
-                                        <h3 className="mb-3">
-                                            12 Years Of Experience In Auto
-                                            Servicing
-                                        </h3>
+                                        <h3 className="mb-3">Oil Changing</h3>
                                         <p className="mb-4">
-                                            Tempor erat elitr rebum at clita.
-                                            Diam dolor diam ipsum sit. Aliqu
-                                            diam amet diam et eos. Clita erat
-                                            ipsum et lorem et sit, sed stet
-                                            lorem sit clita duo justo magna
-                                            dolore erat amet
+                                            Our oil changing service, backed by
+                                            30 years of experience, ensures your
+                                            vehicle&apos;s engine operates
+                                            smoothly and efficiently.
                                         </p>
                                         <p>
                                             <i className="fa fa-check text-success me-3"></i>
@@ -318,7 +305,7 @@ const Service = () => {
                                             Modern Equipment
                                         </p>
                                         <Button
-                                            href=""
+                                            href="/services"
                                             variant="primary"
                                             className="py-3 px-5 mt-3"
                                         >

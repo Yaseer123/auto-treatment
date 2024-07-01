@@ -27,12 +27,13 @@ const ServiceBox = () => {
                                 <div className="ps-4">
                                     <h5 className="mb-3">Quality Servicing</h5>
                                     <p>
-                                        Diam dolor diam ipsum sit amet diam et
-                                        eos erat ipsum
+                                        Our certified professionals provide
+                                        top-notch services ensuring your vehicle
+                                        is always in excellent condition.
                                     </p>
                                     <a
                                         className="text-secondary border-bottom"
-                                        href=""
+                                        href="/services"
                                     >
                                         Read More
                                     </a>
@@ -55,12 +56,13 @@ const ServiceBox = () => {
                                 <div className="ps-4">
                                     <h5 className="mb-3">Expert Workers</h5>
                                     <p>
-                                        Diam dolor diam ipsum sit amet diam et
-                                        eos erat ipsum
+                                        Our team consists of highly skilled
+                                        technicians who are experts in their
+                                        respective fields.
                                     </p>
                                     <a
                                         className="text-secondary border-bottom"
-                                        href=""
+                                        href="/services"
                                     >
                                         Read More
                                     </a>
@@ -83,12 +85,13 @@ const ServiceBox = () => {
                                 <div className="ps-4">
                                     <h5 className="mb-3">Modern Equipment</h5>
                                     <p>
-                                        Diam dolor diam ipsum sit amet diam et
-                                        eos erat ipsum
+                                        We use the latest tools and technology
+                                        to ensure accurate diagnostics and
+                                        repairs for your vehicle.
                                     </p>
                                     <a
                                         className="text-secondary border-bottom"
-                                        href=""
+                                        href="/services"
                                     >
                                         Read More
                                     </a>

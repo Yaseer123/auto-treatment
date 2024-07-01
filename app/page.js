@@ -4,7 +4,6 @@ import AboutComponent from "@/components/home/AboutComponent";
 import FactComponent from "@/components/home/Fact";
 import Service from "@/components/home/Service";
 import BookingForm from "@/components/contact/BookingForm";
-import OurTechnicians from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
@@ -16,7 +15,7 @@ export default function Home() {
             <FactComponent />
             <Service />
             <BookingForm />
-            <OurTechnicians />
+            {/* <OurTechnicians /> */}
             <Testimonials />
         </>
     );

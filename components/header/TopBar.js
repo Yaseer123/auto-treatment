@@ -18,17 +18,20 @@ const TopBar = () => {
                     <Col lg={7} className="text-start px-5 py-3">
                         <div className="d-inline-flex align-items-center me-4">
                             <FaMapMarkerAlt className="text-primary me-2" />
-                            <small>Location, City, Country</small>
+                            <small>
+                                Plot-37, Road-20, Block-J, Baridhara, Vatara,
+                                Dhaka-1212
+                            </small>
                         </div>
                         <div className="d-inline-flex align-items-center">
                             <FaClock className="text-primary me-2" />
-                            <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                            <small>Everyday : 09.00 AM - 12.00 PM</small>
                         </div>
                     </Col>
                     <Col lg={5} className="text-end px-5 py-3">
                         <div className="d-inline-flex align-items-center me-4">
                             <FaPhoneAlt className="text-primary me-2" />
-                            <small>+012 345 6789</small>
+                            <small>+8801715663335</small>
                         </div>
                         <div className="d-inline-flex align-items-center">
                             <a

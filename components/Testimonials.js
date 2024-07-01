@@ -1,31 +1,30 @@
 "use client";
 import React, { useState } from "react";
 import { Container, Row, Col, Carousel, Image } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const testimonials = [
     {
-        name: "Client Name",
-        profession: "Profession",
-        text: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.",
+        name: "John Doe",
+        profession: "Software Engineer",
+        text: "Outstanding service! They fixed my car quickly and professionally.",
         image: "img/testimonial-1.jpg",
     },
     {
-        name: "Client Name",
-        profession: "Profession",
-        text: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.",
+        name: "Jane Smith",
+        profession: "Marketing Manager",
+        text: "Impressive expertise! The team handled my car maintenance with great care.",
         image: "img/testimonial-2.jpg",
     },
     {
-        name: "Client Name",
-        profession: "Profession",
-        text: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.",
+        name: "Michael Brown",
+        profession: "Teacher",
+        text: "Highly recommend! Excellent service from start to finish.",
         image: "img/testimonial-3.jpg",
     },
     {
-        name: "Client Name",
-        profession: "Profession",
-        text: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.",
+        name: "Emily Davis",
+        profession: "Graphic Designer",
+        text: "Very satisfied! They exceeded my expectations in every way.",
         image: "img/testimonial-4.jpg",
     },
 ];
