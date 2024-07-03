@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const ContactSection = () => {
     return (
@@ -17,8 +18,12 @@ const ContactSection = () => {
                                 <div className="bg-light d-flex flex-column justify-content-center p-4">
                                     <h5 className="text-uppercase">Booking</h5>
                                     <p className="m-0">
-                                        <i className="fa fa-envelope-open text-primary me-2"></i>
-                                        book@example.com
+                                        <FaPhoneAlt className="m-1" />
+                                        +8801998084908
+                                    </p>
+                                    <p>
+                                        <FaEnvelope className="m-1" />{" "}
+                                        autotreatment.auto@gmail.com
                                     </p>
                                 </div>
                             </Col>
@@ -26,8 +31,14 @@ const ContactSection = () => {
                                 <div className="bg-light d-flex flex-column justify-content-center p-4">
                                     <h5 className="text-uppercase">General</h5>
                                     <p className="m-0">
-                                        <i className="fa fa-envelope-open text-primary me-2"></i>
-                                        info@example.com
+                                        {" "}
+                                        <FaPhoneAlt className="m-1" />
+                                        +8801998084908
+                                    </p>
+                                    <p>
+                                        {" "}
+                                        <FaEnvelope className="m-1" />
+                                        autotreatment.auto@gmail.com
                                     </p>
                                 </div>
                             </Col>
@@ -37,8 +48,13 @@ const ContactSection = () => {
                                         Technical
                                     </h5>
                                     <p className="m-0">
-                                        <i className="fa fa-envelope-open text-primary me-2"></i>
-                                        tech@example.com
+                                        <FaPhoneAlt className="m-1" />{" "}
+                                        +8801715663335
+                                    </p>
+                                    <p>
+                                        {" "}
+                                        <FaEnvelope className="m-1" />{" "}
+                                        autotreatment.auto@gmail.com
                                     </p>
                                 </div>
                             </Col>

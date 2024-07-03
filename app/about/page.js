@@ -2,7 +2,6 @@ import AboutHeader from "@/components/AboutHeader";
 import AboutComponent from "@/components/home/AboutComponent";
 import FactComponent from "@/components/home/Fact";
 import ServiceBox from "@/components/home/ServiceBox";
-import OurTechnicians from "@/components/Team";
 
 export default function About() {
     return (
@@ -11,7 +10,6 @@ export default function About() {
             <ServiceBox />
             <AboutComponent />
             <FactComponent />
-            <OurTechnicians />
         </>
     );
 }

@@ -6,20 +6,6 @@
     --dark: #111111 !important;
 }
 
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-li,
-span,
-small {
-    font-weight: 5rem !important;
-}
 
 .text-primary {
     color: #D81324 !important;
@@ -44,10 +30,12 @@ small {
     color: var(--dark) !important;
 }
 
+/* Styling for hover and active states */
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--primary) !important;
 }
+
 
 /* Other styles */
 .fw-medium {

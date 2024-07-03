@@ -1,7 +1,7 @@
 "use client";
+
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const BookingForm = () => {
     const [formData, setFormData] = useState({
@@ -20,8 +20,15 @@ const BookingForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const phoneRegex = /^[0-9]{11}$/; // Simple regex for an 11-digit phone number
+
         if (!formData.name || !formData.phone || !formData.message) {
             alert("Please fill in all the required fields.");
+            return;
+        }
+
+        if (!phoneRegex.test(formData.phone)) {
+            alert("Please enter a valid 11-digit phone number.");
             return;
         }
 
@@ -35,14 +42,17 @@ const BookingForm = () => {
             });
 
             if (response.ok) {
+                const data = await response.json(); // Parse JSON response
                 alert("Booking successful!");
                 setFormData({ name: "", phone: "", message: "" });
             } else {
-                const data = await response.json();
+                // Handle non-successful response
+                const data = await response.json(); // Parse JSON response
+                console.error("Booking failed:", data);
                 alert(`Booking failed: ${data.error}`);
             }
         } catch (error) {
-            console.error(error);
+            console.error("Booking failed:", error);
             alert("Booking failed!");
         }
     };
@@ -59,10 +69,7 @@ const BookingForm = () => {
                             </h1>
                             <p className="text-white mb-0">
                                 We specialize in providing certified and
-                                award-winning car repair services. Our team has
-                                over 30 years of experience in delivering
-                                top-notch car repair solutions, ensuring your
-                                vehicle receives the best care possible.
+                                award-winning car repair services.
                             </p>
                         </div>
                     </Col>

@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { FaCar } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import { FaCar, FaArrowCircleRight } from "react-icons/fa";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 const NavigationBar = () => {
+    const router = useRouter();
+
     return (
         <Navbar
             bg="white"
@@ -25,25 +28,44 @@ const NavigationBar = () => {
                 <Navbar.Toggle aria-controls="navbarCollapse" />
                 <Navbar.Collapse id="navbarCollapse">
                     <Nav className="ms-auto p-4 p-lg-0">
-                        <Link href="/" className="nav-link active">
+                        <Link
+                            href="/"
+                            className={`nav-link ${
+                                router.pathname === "/" ? "active" : ""
+                            }`}
+                        >
                             Home
                         </Link>
-                        <Link href="/about" className="nav-link">
+                        <Link
+                            href="/about"
+                            className={`nav-link ${
+                                router.pathname === "/about" ? "active" : ""
+                            }`}
+                        >
                             About
                         </Link>
-                        <Link href="/services" className="nav-link">
+                        <Link
+                            href="/services"
+                            className={`nav-link ${
+                                router.pathname === "/services" ? "active" : ""
+                            }`}
+                        >
                             Services
                         </Link>
-
-                        <Link href="/contact" className="nav-link">
+                        <Link
+                            href="/contact"
+                            className={`nav-link ${
+                                router.pathname === "/contact" ? "active" : ""
+                            }`}
+                        >
                             Contact
                         </Link>
                     </Nav>
                     <Link
-                        href="/quote"
+                        href="/contact"
                         className="btn btn-primary py-4 px-lg-5 d-none d-lg-block"
                     >
-                        Get A Quote<i className="fa fa-arrow-right ms-3"></i>
+                        Get A Quote <FaArrowCircleRight className=" mb-1" />
                     </Link>
                 </Navbar.Collapse>
             </Container>

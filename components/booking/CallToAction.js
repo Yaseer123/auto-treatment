@@ -26,7 +26,7 @@ const CallToAction = () => {
                         <div className="bg-primary d-flex flex-column justify-content-center text-center h-100 p-4">
                             <h3 className="text-white mb-4">
                                 <FaPhoneAlt className="me-3" />
-                                +012 345 6789
+                                +012 345 67891
                             </h3>
                             <Button
                                 href=""
