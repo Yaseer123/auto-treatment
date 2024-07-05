@@ -21,7 +21,7 @@ const NavigationBar = () => {
                     className="navbar-brand d-flex align-items-center px-4 px-lg-5"
                 >
                     <h2 className="m-0 text-primary">
-                        <FaCar className="me-2" />
+                        <FaCar className="me-2 mb-1" />
                         Auto Treatment
                     </h2>
                 </Link>
