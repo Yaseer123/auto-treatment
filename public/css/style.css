@@ -6,13 +6,29 @@
     --dark: #111111 !important;
 }
 
+/* Increase font weight for all elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.navbar-brand,
+.nav-link,
+.btn {
+    font-weight: 600;
+    /* Adjust the value as per your preference */
+}
+
 
 .text-primary {
-    color: #D81324 !important;
+    color: var(--primary) !important;
 }
 
 .bg-primary {
-    background-color: #D81324 !important;
+    background-color: var(--primary) !important;
 }
 
 /* General overrides for React Bootstrap */
@@ -22,19 +38,12 @@
 }
 
 .btn-secondary {
-    background-color: var(--secondary) !important;
-    border-color: var(--secondary) !important;
+    background-color: var(--dark) !important;
+    border-color: var(--dark) !important;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: var(--dark) !important;
-}
 
-/* Styling for hover and active states */
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary) !important;
-}
+
 
 
 /* Other styles */
@@ -103,6 +112,16 @@
 }
 
 /* Navbar */
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: red !important;
+}
+
+
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -155,6 +174,7 @@
         opacity: 1;
     }
 }
+
 
 /* Header */
 .carousel-caption {

@@ -1,28 +1,32 @@
 import Booking from "@/lib/models/Booking";
 import { mongooseConnect } from "@/lib/mongoose";
+import { NextResponse } from "next/server"; //Imported Next Response
 
-export async function POST(req, res) {
+export async function POST(req) {
     await mongooseConnect();
 
-    const { name, phone, message } = req.body;
+    const { name, phone, message } = await req.json();
 
     if (!name || !phone || !message) {
-        return res
-            .status(400)
-            .json({ error: "All required fields must be filled out." });
+        return NextResponse.json(
+            //Replaces res with NextResponse
+            { error: "All required fields must be filled out." },
+            { status: 400 }
+        );
     }
 
     try {
         const newBooking = await Booking.create({ name, phone, message });
-        return res.status(201).json(newBooking);
+        return NextResponse.json(newBooking, { status: 201 });
     } catch (error) {
         console.error("Error creating booking:", error);
-        return res
-            .status(500)
-            .json({ error: "An error occurred while saving the Booking." });
+        return NextResponse.json(
+            { error: "An error occurred while saving the Booking." },
+            { status: 500 }
+        );
     }
 }
 
-export async function GET(req, res) {
-    return res.status(405).json({ error: "Method not allowed." });
+export async function GET() {
+    return NextResponse.json({ error: "Method not allowed." }, { status: 405 });
 }

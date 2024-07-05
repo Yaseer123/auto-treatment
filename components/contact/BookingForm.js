@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 
 const BookingForm = () => {
     const [formData, setFormData] = useState({
@@ -9,26 +9,40 @@ const BookingForm = () => {
         phone: "",
         message: "",
     });
+    const [responseMessage, setResponseMessage] = useState("");
+    const [showForm, setShowForm] = useState(true);
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
+        setErrors({ ...errors, [e.target.name]: "" });
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+        const phoneRegex = /^[0-9]{11}$/;
+
+        if (!formData.name) newErrors.name = "Name is required";
+        if (!formData.phone) {
+            newErrors.phone = "Phone is required";
+        } else if (!phoneRegex.test(formData.phone)) {
+            newErrors.phone = "Please enter a valid 11-digit phone number";
+        }
+        if (!formData.message) newErrors.message = "Message is required";
+
+        return newErrors;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setResponseMessage("");
 
-        const phoneRegex = /^[0-9]{11}$/; // Simple regex for an 11-digit phone number
-
-        if (!formData.name || !formData.phone || !formData.message) {
-            alert("Please fill in all the required fields.");
-            return;
-        }
-
-        if (!phoneRegex.test(formData.phone)) {
-            alert("Please enter a valid 11-digit phone number.");
+        const formErrors = validateForm();
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors);
             return;
         }
 
@@ -42,18 +56,16 @@ const BookingForm = () => {
             });
 
             if (response.ok) {
-                const data = await response.json(); // Parse JSON response
-                alert("Booking successful!");
+                setResponseMessage("Booking successful!");
+                setShowForm(false);
                 setFormData({ name: "", phone: "", message: "" });
             } else {
-                // Handle non-successful response
-                const data = await response.json(); // Parse JSON response
-                console.error("Booking failed:", data);
-                alert(`Booking failed: ${data.error}`);
+                const data = await response.json();
+                setResponseMessage(`Booking failed: ${data.error}`);
             }
         } catch (error) {
             console.error("Booking failed:", error);
-            alert("Booking failed!");
+            setResponseMessage("An error occurred. Please try again later.");
         }
     };
 
@@ -78,52 +90,96 @@ const BookingForm = () => {
                             <h1 className="text-white mb-4">
                                 Book an Appointment
                             </h1>
-                            <Form onSubmit={handleSubmit}>
-                                <Row className="g-3">
-                                    <Col xs={12} sm={6}>
-                                        <Form.Control
-                                            type="text"
-                                            name="name"
-                                            placeholder="Your Name"
-                                            style={{ height: "55px" }}
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </Col>
-                                    <Col xs={12} sm={6}>
-                                        <Form.Control
-                                            type="text"
-                                            name="phone"
-                                            placeholder="Your Phone"
-                                            style={{ height: "55px" }}
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </Col>
-                                    <Col xs={12}>
-                                        <Form.Control
-                                            as="textarea"
-                                            name="message"
-                                            placeholder="Tell us about your car issues and preferred appointment time."
-                                            rows={3}
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </Col>
-                                    <Col xs={12}>
-                                        <Button
-                                            variant="secondary"
-                                            className="w-100 py-3"
-                                            type="submit"
-                                        >
-                                            Book Now
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </Form>
+                            {showForm ? (
+                                <Form onSubmit={handleSubmit}>
+                                    <Row className="g-3">
+                                        <Col xs={12} sm={6}>
+                                            <Form.Control
+                                                type="text"
+                                                name="name"
+                                                placeholder="Your Name"
+                                                style={{ height: "55px" }}
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                isInvalid={!!errors.name}
+                                                required
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.name}
+                                            </Form.Control.Feedback>
+                                        </Col>
+                                        <Col xs={12} sm={6}>
+                                            <Form.Control
+                                                type="text"
+                                                name="phone"
+                                                placeholder="Your Phone"
+                                                style={{ height: "55px" }}
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                isInvalid={!!errors.phone}
+                                                required
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.phone ===
+                                                "Please enter a valid 11-digit phone number" ? (
+                                                    <span
+                                                        style={{
+                                                            color: "white",
+                                                        }}
+                                                    >
+                                                        {errors.phone}
+                                                    </span>
+                                                ) : (
+                                                    errors.phone
+                                                )}
+                                            </Form.Control.Feedback>
+                                        </Col>
+                                        <Col xs={12}>
+                                            <Form.Control
+                                                as="textarea"
+                                                name="message"
+                                                placeholder="Tell us about your car issues and preferred appointment time."
+                                                rows={3}
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                isInvalid={!!errors.message}
+                                                required
+                                            />
+                                            <Form.Control.Feedback type="invalid">
+                                                {errors.message}
+                                            </Form.Control.Feedback>
+                                        </Col>
+                                        <Col xs={12}>
+                                            <Button
+                                                variant="secondary"
+                                                className="w-100 py-3"
+                                                type="submit"
+                                            >
+                                                Book Now
+                                            </Button>
+                                        </Col>
+                                    </Row>
+                                </Form>
+                            ) : (
+                                <div className="mt-3 text-center">
+                                    <Alert variant="danger">
+                                        {responseMessage}
+                                    </Alert>
+                                </div>
+                            )}
+                            {responseMessage && showForm && (
+                                <div className="mt-3 text-center">
+                                    <Alert
+                                        variant={
+                                            responseMessage.includes("failed")
+                                                ? "danger"
+                                                : "success"
+                                        }
+                                    >
+                                        {responseMessage}
+                                    </Alert>
+                                </div>
+                            )}
                         </div>
                     </Col>
                 </Row>

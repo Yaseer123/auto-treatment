@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { FaCar, FaArrowCircleRight } from "react-icons/fa";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 const NavigationBar = () => {
-    const router = useRouter();
+    const pathname = usePathname();
 
     return (
         <Navbar
@@ -31,7 +31,7 @@ const NavigationBar = () => {
                         <Link
                             href="/"
                             className={`nav-link ${
-                                router.pathname === "/" ? "active" : ""
+                                pathname === "/" ? "active" : ""
                             }`}
                         >
                             Home
@@ -39,7 +39,7 @@ const NavigationBar = () => {
                         <Link
                             href="/about"
                             className={`nav-link ${
-                                router.pathname === "/about" ? "active" : ""
+                                pathname === "/about" ? "active" : ""
                             }`}
                         >
                             About
@@ -47,7 +47,7 @@ const NavigationBar = () => {
                         <Link
                             href="/services"
                             className={`nav-link ${
-                                router.pathname === "/services" ? "active" : ""
+                                pathname === "/services" ? "active" : ""
                             }`}
                         >
                             Services
@@ -55,7 +55,7 @@ const NavigationBar = () => {
                         <Link
                             href="/contact"
                             className={`nav-link ${
-                                router.pathname === "/contact" ? "active" : ""
+                                pathname === "/contact" ? "active" : ""
                             }`}
                         >
                             Contact
@@ -65,7 +65,7 @@ const NavigationBar = () => {
                         href="/contact"
                         className="btn btn-primary py-4 px-lg-5 d-none d-lg-block"
                     >
-                        Get A Quote <FaArrowCircleRight className=" mb-1" />
+                        Get A Quote <FaArrowCircleRight className="mb-1" />
                     </Link>
                 </Navbar.Collapse>
             </Container>

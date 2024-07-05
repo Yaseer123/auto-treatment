@@ -1,9 +1,71 @@
 "use client";
-import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 const ContactSection = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        phone: "",
+        message: "",
+    });
+    const [responseMessage, setResponseMessage] = useState("");
+    const [showForm, setShowForm] = useState(true);
+    const [errors, setErrors] = useState({});
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData({ ...formData, [id]: value });
+        setErrors({ ...errors, [id]: "" });
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+        if (!formData.name) newErrors.name = "Name is required";
+        if (!formData.email) newErrors.email = "Email is required";
+        if (!formData.subject) newErrors.subject = "Subject is required";
+        if (!formData.phone) newErrors.phone = "Phone number is required";
+        if (!/^[0-9]{11}$/.test(formData.phone))
+            newErrors.phone = "Please enter a valid 11-digit phone number.";
+        if (!formData.message) newErrors.message = "Message is required";
+        return newErrors;
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setResponseMessage("");
+
+        const formErrors = validateForm();
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors);
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setResponseMessage("Thank you! We will contact you soon.");
+                setShowForm(false);
+            } else {
+                setResponseMessage(result.error || "Something went wrong");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setResponseMessage("An error occurred. Please try again later.");
+        }
+    };
+
     return (
         <Container fluid className="py-5">
             <Container>
@@ -14,7 +76,7 @@ const ContactSection = () => {
                 <Row className="g-4">
                     <Col xs={12}>
                         <Row className="gy-4">
-                            <Col md={4}>
+                            <Col md={3}>
                                 <div className="bg-light d-flex flex-column justify-content-center p-4">
                                     <h5 className="text-uppercase">Booking</h5>
                                     <p className="m-0">
@@ -22,12 +84,12 @@ const ContactSection = () => {
                                         +8801998084908
                                     </p>
                                     <p>
-                                        <FaEnvelope className="m-1" />{" "}
-                                        autotreatment.auto@gmail.com
+                                        <FaEnvelope className="m-1" /> Email:
+                                        autotreatment.auto@gmail.com{" "}
                                     </p>
                                 </div>
                             </Col>
-                            <Col md={4}>
+                            <Col md={3}>
                                 <div className="bg-light d-flex flex-column justify-content-center p-4">
                                     <h5 className="text-uppercase">General</h5>
                                     <p className="m-0">
@@ -37,12 +99,12 @@ const ContactSection = () => {
                                     </p>
                                     <p>
                                         {" "}
-                                        <FaEnvelope className="m-1" />
-                                        autotreatment.auto@gmail.com
+                                        <FaEnvelope className="me-1" />
+                                        Email: autotreatment.auto@gmail.com
                                     </p>
                                 </div>
                             </Col>
-                            <Col md={4}>
+                            <Col md={3}>
                                 <div className="bg-light d-flex flex-column justify-content-center p-4">
                                     <h5 className="text-uppercase">
                                         Technical
@@ -53,8 +115,24 @@ const ContactSection = () => {
                                     </p>
                                     <p>
                                         {" "}
-                                        <FaEnvelope className="m-1" />{" "}
-                                        autotreatment.auto@gmail.com
+                                        <FaEnvelope className="m-1" /> Email:
+                                        autotreatment.auto@gmail.com{" "}
+                                    </p>
+                                </div>
+                            </Col>
+                            <Col md={3}>
+                                <div className="bg-light d-flex flex-column justify-content-center p-4">
+                                    <h5 className="text-uppercase">
+                                        For English Speakers
+                                    </h5>
+                                    <p className="m-0">
+                                        <FaPhoneAlt className="m-1" />{" "}
+                                        +8801828050237
+                                    </p>
+                                    <p>
+                                        {" "}
+                                        <FaEnvelope className="m-1" /> Email:
+                                        autotreatment.auto@gmail.com{" "}
                                     </p>
                                 </div>
                             </Col>
@@ -73,78 +151,151 @@ const ContactSection = () => {
                     </Col>
                     <Col md={6}>
                         <div className="wow fadeInUp" data-wow-delay="0.2s">
-                            <p className="mb-4">
-                                The contact form is currently inactive. Get a
-                                functional and working contact form with Ajax &
-                                PHP in a few minutes. Just copy and paste the
-                                files, add a little code and you are done.{" "}
-                                <a href="https://freewebsitecode.com/contact-form">
-                                    Download Now
-                                </a>
-                                .
-                            </p>
-                            <Form>
-                                <Row className="g-3">
-                                    <Col md={6}>
-                                        <Form.Group className="form-floating">
-                                            <Form.Control
-                                                type="text"
-                                                id="name"
-                                                placeholder="Your Name"
-                                            />
-                                            <Form.Label htmlFor="name">
-                                                Your Name
-                                            </Form.Label>
-                                        </Form.Group>
-                                    </Col>
-                                    <Col md={6}>
-                                        <Form.Group className="form-floating">
-                                            <Form.Control
-                                                type="email"
-                                                id="email"
-                                                placeholder="Your Email"
-                                            />
-                                            <Form.Label htmlFor="email">
-                                                Your Email
-                                            </Form.Label>
-                                        </Form.Group>
-                                    </Col>
-                                    <Col xs={12}>
-                                        <Form.Group className="form-floating">
-                                            <Form.Control
-                                                type="text"
-                                                id="subject"
-                                                placeholder="Subject"
-                                            />
-                                            <Form.Label htmlFor="subject">
-                                                Subject
-                                            </Form.Label>
-                                        </Form.Group>
-                                    </Col>
-                                    <Col xs={12}>
-                                        <Form.Group className="form-floating">
-                                            <Form.Control
-                                                as="textarea"
-                                                id="message"
-                                                placeholder="Leave a message here"
-                                                style={{ height: "100px" }}
-                                            />
-                                            <Form.Label htmlFor="message">
-                                                Message
-                                            </Form.Label>
-                                        </Form.Group>
-                                    </Col>
-                                    <Col xs={12}>
-                                        <Button
-                                            variant="primary"
-                                            className="w-100 py-3"
-                                            type="submit"
-                                        >
-                                            Send Message
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </Form>
+                            {showForm ? (
+                                <>
+                                    <h3 className="mb-4 text-center">
+                                        Contact Us
+                                    </h3>
+                                    <Form onSubmit={handleSubmit}>
+                                        <Row className="g-3">
+                                            <Col md={6}>
+                                                <Form.Group className="form-floating">
+                                                    <Form.Control
+                                                        type="text"
+                                                        id="name"
+                                                        placeholder="Your Name"
+                                                        value={formData.name}
+                                                        onChange={handleChange}
+                                                        isInvalid={
+                                                            !!errors.name
+                                                        }
+                                                    />
+                                                    <Form.Label htmlFor="name">
+                                                        Your Name
+                                                    </Form.Label>
+                                                    <Form.Control.Feedback type="invalid">
+                                                        {errors.name}
+                                                    </Form.Control.Feedback>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col md={6}>
+                                                <Form.Group className="form-floating">
+                                                    <Form.Control
+                                                        type="email"
+                                                        id="email"
+                                                        placeholder="Your Email"
+                                                        value={formData.email}
+                                                        onChange={handleChange}
+                                                        isInvalid={
+                                                            !!errors.email
+                                                        }
+                                                    />
+                                                    <Form.Label htmlFor="email">
+                                                        Your Email
+                                                    </Form.Label>
+                                                    <Form.Control.Feedback type="invalid">
+                                                        {errors.email}
+                                                    </Form.Control.Feedback>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs={12}>
+                                                <Form.Group className="form-floating">
+                                                    <Form.Control
+                                                        type="text"
+                                                        id="phone"
+                                                        placeholder="Phone Number"
+                                                        value={formData.phone}
+                                                        onChange={handleChange}
+                                                        isInvalid={
+                                                            !!errors.phone
+                                                        }
+                                                    />
+                                                    <Form.Label htmlFor="phone">
+                                                        Phone Number
+                                                    </Form.Label>
+                                                    <Form.Control.Feedback
+                                                        type="invalid"
+                                                        style={{ color: "red" }}
+                                                    >
+                                                        {errors.phone}
+                                                    </Form.Control.Feedback>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs={12}>
+                                                <Form.Group className="form-floating">
+                                                    <Form.Control
+                                                        type="text"
+                                                        id="subject"
+                                                        placeholder="Subject"
+                                                        value={formData.subject}
+                                                        onChange={handleChange}
+                                                        isInvalid={
+                                                            !!errors.subject
+                                                        }
+                                                    />
+                                                    <Form.Label htmlFor="subject">
+                                                        Subject
+                                                    </Form.Label>
+                                                    <Form.Control.Feedback type="invalid">
+                                                        {errors.subject}
+                                                    </Form.Control.Feedback>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs={12}>
+                                                <Form.Group className="form-floating">
+                                                    <Form.Control
+                                                        as="textarea"
+                                                        id="message"
+                                                        placeholder="Leave a message here"
+                                                        style={{
+                                                            height: "100px",
+                                                        }}
+                                                        value={formData.message}
+                                                        onChange={handleChange}
+                                                        isInvalid={
+                                                            !!errors.message
+                                                        }
+                                                    />
+                                                    <Form.Label htmlFor="message">
+                                                        Message
+                                                    </Form.Label>
+                                                    <Form.Control.Feedback type="invalid">
+                                                        {errors.message}
+                                                    </Form.Control.Feedback>
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs={12}>
+                                                <Button
+                                                    variant="primary"
+                                                    className="w-100 py-3"
+                                                    type="submit"
+                                                >
+                                                    Send Message
+                                                </Button>
+                                            </Col>
+                                        </Row>
+                                    </Form>
+                                </>
+                            ) : (
+                                <div className="mt-3 text-center">
+                                    <Alert variant="success">
+                                        Thank you! We will contact you soon.
+                                    </Alert>
+                                </div>
+                            )}
+                            {responseMessage && showForm && (
+                                <div className="mt-3 text-center">
+                                    <Alert
+                                        variant={
+                                            responseMessage.includes("error")
+                                                ? "danger"
+                                                : "success"
+                                        }
+                                    >
+                                        {responseMessage}
+                                    </Alert>
+                                </div>
+                            )}
                         </div>
                     </Col>
                 </Row>

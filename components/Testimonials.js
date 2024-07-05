@@ -4,28 +4,22 @@ import { Container, Row, Col, Carousel, Image } from "react-bootstrap";
 
 const testimonials = [
     {
-        name: "John Doe",
+        name: "Naveed Mahbub",
         profession: "Software Engineer",
         text: "Outstanding service! They fixed my car quickly and professionally.",
-        image: "img/testimonial-1.jpg",
+        image: "img/1.png",
     },
     {
-        name: "Jane Smith",
+        name: "Mahfuzur Rahman",
         profession: "Marketing Manager",
         text: "Impressive expertise! The team handled my car maintenance with great care.",
-        image: "img/testimonial-2.jpg",
+        image: "img/2.png",
     },
     {
-        name: "Michael Brown",
-        profession: "Teacher",
+        name: "Jabari Ekon",
+        profession: "Professor",
         text: "Highly recommend! Excellent service from start to finish.",
-        image: "img/testimonial-3.jpg",
-    },
-    {
-        name: "Emily Davis",
-        profession: "Graphic Designer",
-        text: "Very satisfied! They exceeded my expectations in every way.",
-        image: "img/testimonial-4.jpg",
+        image: "img/3.png",
     },
 ];
 
