@@ -76,20 +76,7 @@ const ContactSection = () => {
                 <Row className="g-4">
                     <Col xs={12}>
                         <Row className="gy-4">
-                            <Col md={3}>
-                                <div className="bg-light d-flex flex-column justify-content-center p-4">
-                                    <h5 className="text-uppercase">Booking</h5>
-                                    <p className="m-0">
-                                        <FaPhoneAlt className="m-1" />
-                                        +8801998084908
-                                    </p>
-                                    <p>
-                                        <FaEnvelope className="m-1" /> Email:
-                                        autotreatment.auto@gmail.com{" "}
-                                    </p>
-                                </div>
-                            </Col>
-                            <Col md={3}>
+                            <Col md={4}>
                                 <div className="bg-light d-flex flex-column justify-content-center p-4">
                                     <h5 className="text-uppercase">General</h5>
                                     <p className="m-0">
@@ -100,11 +87,11 @@ const ContactSection = () => {
                                     <p>
                                         {" "}
                                         <FaEnvelope className="me-1" />
-                                        Email: autotreatment.auto@gmail.com
+                                        autotreatment.auto@gmail.com
                                     </p>
                                 </div>
                             </Col>
-                            <Col md={3}>
+                            <Col md={4}>
                                 <div className="bg-light d-flex flex-column justify-content-center p-4">
                                     <h5 className="text-uppercase">
                                         Technical
@@ -115,12 +102,12 @@ const ContactSection = () => {
                                     </p>
                                     <p>
                                         {" "}
-                                        <FaEnvelope className="m-1" /> Email:
+                                        <FaEnvelope className="m-1" />
                                         autotreatment.auto@gmail.com{" "}
                                     </p>
                                 </div>
                             </Col>
-                            <Col md={3}>
+                            <Col md={4}>
                                 <div className="bg-light d-flex flex-column justify-content-center p-4">
                                     <h5 className="text-uppercase">
                                         For English Speakers
@@ -131,7 +118,7 @@ const ContactSection = () => {
                                     </p>
                                     <p>
                                         {" "}
-                                        <FaEnvelope className="m-1" /> Email:
+                                        <FaEnvelope className="m-1" />
                                         autotreatment.auto@gmail.com{" "}
                                     </p>
                                 </div>
