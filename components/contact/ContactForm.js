@@ -87,7 +87,7 @@ const ContactSection = () => {
                                     <p>
                                         {" "}
                                         <FaEnvelope className="me-1" />
-                                        autotreatment.auto@gmail.com
+                                        autotreatment.autos@gmail.com{" "}
                                     </p>
                                 </div>
                             </Col>
@@ -103,7 +103,7 @@ const ContactSection = () => {
                                     <p>
                                         {" "}
                                         <FaEnvelope className="m-1" />
-                                        autotreatment.auto@gmail.com{" "}
+                                        autotreatment.autos@gmail.com{" "}
                                     </p>
                                 </div>
                             </Col>
@@ -119,7 +119,7 @@ const ContactSection = () => {
                                     <p>
                                         {" "}
                                         <FaEnvelope className="m-1" />
-                                        autotreatment.auto@gmail.com{" "}
+                                        autotreatment.autos@gmail.com{" "}
                                     </p>
                                 </div>
                             </Col>
