@@ -14,7 +14,7 @@ const AboutComponent = () => {
                         >
                             <Image
                                 src="/img/about.jpg"
-                                alt="Car Repair in Bangladesh"
+                                alt=""
                                 fluid
                                 className="position-absolute w-100 h-100"
                                 style={{ objectFit: "cover" }}
@@ -36,23 +36,28 @@ const AboutComponent = () => {
                         </h6>
                         <h1 className="mb-4">
                             <span className="text-primary">Auto Treatment</span>{" "}
-                            Is The Best Place for{" "}
-                            <strong>Car Repair in Bangladesh</strong>
+                            Is The Best Place For Your Auto Care in Dhaka
                         </h1>
                         <p className="mb-4">
-                            At Auto Treatment, we provide{" "}
-                            <strong>professional car servicing</strong>,
-                            <strong> vehicle diagnostics</strong>, and{" "}
-                            <strong>auto maintenance in Dhaka</strong>. Our
-                            certified <strong>car mechanics</strong> use modern
-                            tools to ensure your vehicle stays in perfect
-                            condition.
+                            At Auto Treatment, we pride ourselves on providing
+                            top-notch car repair, maintenance, and service. Our
+                            team of experienced professionals is dedicated to
+                            ensuring your vehicle is in the best possible
+                            condition. We offer a comprehensive range of
+                            services, from routine maintenance to complex
+                            repairs, using high-quality parts and the latest
+                            technology. Trust us to keep your car running
+                            smoothly and efficiently.
                         </p>
                         <Row className="g-4 mb-3 pb-3">
-                            <Col xs={12}>
+                            <Col
+                                xs={12}
+                                className="wow fadeIn"
+                                data-wow-delay="0.1s"
+                            >
                                 <div className="d-flex">
                                     <div
-                                        className="bg-light d-flex align-items-center justify-content-center"
+                                        className="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
                                         style={{
                                             width: "45px",
                                             height: "45px",
@@ -65,18 +70,21 @@ const AboutComponent = () => {
                                     <div className="ps-3">
                                         <h6>Professional & Expert</h6>
                                         <span>
-                                            Skilled{" "}
-                                            <strong>car mechanics</strong>{" "}
-                                            passionate about top-quality
-                                            service.
+                                            Our team consists of highly trained
+                                            and certified experts who are
+                                            passionate about cars.
                                         </span>
                                     </div>
                                 </div>
                             </Col>
-                            <Col xs={12}>
+                            <Col
+                                xs={12}
+                                className="wow fadeIn"
+                                data-wow-delay="0.3s"
+                            >
                                 <div className="d-flex">
                                     <div
-                                        className="bg-light d-flex align-items-center justify-content-center"
+                                        className="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
                                         style={{
                                             width: "45px",
                                             height: "45px",
@@ -89,11 +97,36 @@ const AboutComponent = () => {
                                     <div className="ps-3">
                                         <h6>Quality Servicing Center</h6>
                                         <span>
-                                            Reliable{" "}
-                                            <strong>
-                                                auto maintenance in Dhaka
-                                            </strong>{" "}
-                                            with advanced tools.
+                                            We use the latest tools and
+                                            technology to provide the best
+                                            service for your vehicle.
+                                        </span>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col
+                                xs={12}
+                                className="wow fadeIn"
+                                data-wow-delay="0.5s"
+                            >
+                                <div className="d-flex">
+                                    <div
+                                        className="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
+                                        style={{
+                                            width: "45px",
+                                            height: "45px",
+                                        }}
+                                    >
+                                        <span className="fw-bold text-secondary">
+                                            03
+                                        </span>
+                                    </div>
+                                    <div className="ps-3">
+                                        <h6>Award-Winning Workers</h6>
+                                        <span>
+                                            Our commitment to excellence has
+                                            been recognized with numerous awards
+                                            in the industry.
                                         </span>
                                     </div>
                                 </div>
