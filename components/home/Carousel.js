@@ -25,7 +25,8 @@ const CustomCarousel = () => {
                                     {/* Car Servicing */}
                                 </h6>
                                 <h1 className="display-3 text-white mb-4 pb-3 animated slideInDown">
-                                    Qualified Car Repair Service Center
+                                    Qualified Car Repair Service Center in
+                                    Bangladesh
                                 </h1>
                                 <Link href="" legacyBehavior>
                                     <a className="btn btn-primary py-3 px-5 animated slideInDown">
@@ -59,7 +60,8 @@ const CustomCarousel = () => {
                                     {/* Car Servicing */}
                                 </h6>
                                 <h1 className="display-3 text-white mb-4 pb-3 animated slideInDown">
-                                    Qualified Car Wash Service Center
+                                    Qualified Car Wash Service Center in
+                                    Bangladesh
                                 </h1>
                                 <Link href="" legacyBehavior>
                                     <a className="btn btn-primary py-3 px-5 animated slideInDown">

@@ -36,7 +36,7 @@ const AboutComponent = () => {
                         </h6>
                         <h1 className="mb-4">
                             <span className="text-primary">Auto Treatment</span>{" "}
-                            Is The Best Place For Your Auto Care
+                            Is The Best Place For Your Auto Care in Dhaka
                         </h1>
                         <p className="mb-4">
                             At Auto Treatment, we pride ourselves on providing
