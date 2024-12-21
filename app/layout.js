@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "../components/header/NavigationBar";
 import TopBar from "../components/header/TopBar";
 import Footer from "@/components/Footer";
-
+import { Analytics } from "@vercel/analytics/react";
 export const metadata = {
     title: "Best Car Repair Shop in Bangladesh | Professional Auto Services",
     description:
@@ -45,6 +45,7 @@ export default function RootLayout({ children }) {
                 <TopBar />
                 <NavigationBar />
                 {children}
+                <Analytics />
                 <Footer />
             </body>
         </html>
